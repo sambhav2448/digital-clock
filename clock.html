@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        body{
+            height: 100vh;
+            box-sizing: border-box;
+            
+        }
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .clock{
+            font-size: 60px;
+            color: rgb(56, 69, 70);
+            font-weight: 700;
+            padding: 40px 55px;
+            border-radius: 4px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0,19);
+            background: rgb(56, 69, 70,0.1);
+        
+                    
+
+        }
+
+        h1{
+            position: absolute;
+            margin-left: 42.5%;
+            margin-top: 11%;
+            font-size: 40px;
+            color: steelblue;
+            font-family: Montserrat;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Clock IST</h1>
+    
+<div class="container">
+    <div class="clock">
+    </div>
+</div>
+<script>
+    
+
+    const showClock=()=>{
+        var clock=document.querySelector(".clock");
+        var getclock=new Date();
+
+        let h=getclock.getHours();
+        let m=getclock.getMinutes();
+        let s=getclock.getSeconds();
+
+        if(s<10){
+            s="0"+s;
+        }
+        if(m<10){
+            m="0"+m;
+        }
+        if(h<10){
+            h="0"+h
+        }
+        clock.textContent=h+" : "+m+" : "+s;
+        // clock.style.background="black";
+
+        
+        // if(s%2==0){
+        //     document.body.style.background="rgb(22,23,44)";
+        //     clock.style.background="red";
+        // }
+        // else
+        // {
+        //    document.body.style.background="rgb(56, 69, 70,0.1)";
+        //    clock.style.background="white";
+
+
+        // }
+        
+        setTimeout(showClock,1000)
+        
+
+
+    }
+
+    showClock();
+    // function sam(){
+        
+    //     i=i+1;
+    //     b=i;
+    //     if(i===5){
+    //        var b=alert("time up");
+    //     }
+
+    //     return(b)
+
+    // }
+
+</script>
+</body>
+</html>
